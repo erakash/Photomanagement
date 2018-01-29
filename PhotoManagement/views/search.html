@@ -1,0 +1,146 @@
+<html>
+<head>
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+<body>
+    <style>
+        .jumbotron {
+            background-color: #85929E;
+            color: #ffffff;
+        }
+    </style>
+    <div>
+        <div class="jumbotron">
+            <h2 align="center">Welcome to the Search Menu </h2>
+
+        </div>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-4" align="justify">
+                <h3>Brand Category</h3>
+                <div class="radio">
+                    <label><input type="radio" name="optradio" id="1" checked="checked">Clean & Clear</label>
+                </div>
+                <div class="radio">
+                    <label><input type="radio" name="optradio" id="2">Johnson's Baby</label>
+                </div>
+                <div class="radio">
+                    <label><input type="radio" name="optradio" id="3">Johnson's Body Care</label>
+                </div>
+                <div class="radio">
+                    <label><input type="radio" name="optradio" id="4">Johnson's pH5.5</label>
+                </div>
+                <div class="radio">
+                    <label><input type="radio" name="optradio" id="5">Listerine</label>
+                </div>
+                <div class="radio">
+                    <label><input type="radio" name="optradio" id="6">Neutrogena</label>
+                </div>
+                <div class="radio">
+                    <label><input type="radio" name="optradio" id="7">OB</label>
+                </div>
+                <div class="radio">
+                    <label><input type="radio" name="optradio" id="8">Pregaine</label>
+                </div>
+                <div class="radio">
+                    <label><input type="radio" name="optradio" id="9">Rich</label>
+                </div>
+            </div>
+                <div class="col-sm-4" align="justify">
+                    <h3>Product Category</h3>
+                    <div id="target">
+                    </div>
+                    <script>
+                        $(document).ready(function () {
+
+                            var brand1products = ['Cleanser', 'Others'];
+                            var brand2products = ["Baby Shampoo", "Baby Lotion", "Baby Bath", "Baby Hair Care","Wipes-Cleaning", "Wipes-Lotion", "Others"];
+                            var brand3products = ["Body Moisturizer", "Body Wash"];
+                            var brand4products = ["Body Wash"];
+                            var brand5products = ["Mouthwash"];
+                            var brand6products = ["Cleanser", "FMT", "Mask", "Special Cleansing", "Men","H&B","Suncare"];
+                            var brand7products = ["Tampon"];
+                            var brand8products = ["Shampoo"];
+                            var brand9products = ["Dental Floss", "Toothbrush"]
+
+                            
+
+                            $('input[type=radio][name=optradio]').change(function () {
+                                jQuery('#target').html('');
+                                if (this.id == 1) {
+                                    jQuery.each(brand1products, function (i, val) {
+                                        var radioBtn = $('<input type="radio" name="optradio">' + '&nbsp'+ val+'</br>');
+                                        radioBtn.appendTo('#target');
+                                    });
+                                }
+                                else if (this.id == 2) {
+                                    jQuery.each(brand2products, function (i, val) {
+                                        var radioBtn = $('<input type="radio" name="optradio" />' + '&nbsp' + val + '</br>');
+                                        radioBtn.appendTo('#target');
+                                    });
+                                }
+                                else if (this.id == 3) {
+                                    jQuery.each(brand3products, function (i, val) {
+                                        var radioBtn = $('<input type="radio" name="optradio" /> ' + '&nbsp' + val + '</br>');
+                                        radioBtn.appendTo('#target');
+                                    });
+                                }
+
+                                else if (this.id == 4) {
+                                    jQuery.each(brand4products, function (i, val) {
+                                        var radioBtn = $('<input type="radio" name="optradio" />' + '&nbsp'+ val + '</br>');
+                                        radioBtn.appendTo('#target');
+                                    });
+                                }
+
+                                else if (this.id == 5) {
+                                    jQuery.each(brand5products, function (i, val) {
+                                        var radioBtn = $('<input type="radio" name="optradio" />' + '&nbsp' + val + '</br>');
+                                        radioBtn.appendTo('#target');
+                                    });
+                                }
+                                else if (this.id == 6) {
+                                    jQuery.each(brand6products, function (i, val) {
+                                        var radioBtn = $('<input type="radio" name="optradio" />' + '&nbsp'+ val + '</br>');
+                                        radioBtn.appendTo('#target');
+                                    });
+                                }
+                                else if (this.id == 7) {
+                                    jQuery.each(brand7products, function (i, val) {
+                                        var radioBtn = $('<input type="radio" name="optradio" />' + '&nbsp' + val + '</br>');
+                                        radioBtn.appendTo('#target');
+                                    });
+                                }
+                                else if (this.id == 8) {
+                                    jQuery.each(brand8products, function (i, val) {
+                                        var radioBtn = $('<input type="radio" name="optradio" />' + '&nbsp' + val + '</br>');
+                                        radioBtn.appendTo('#target');
+                                    });
+                                }
+                                else if (this.id == 9) {
+                                    jQuery.each(brand9products, function (i, val) {
+                                        var radioBtn = $('<input type="radio" name="optradio" />' + '&nbsp' + val + '</br>');
+                                        radioBtn.appendTo('#target');
+                                    });
+                                }
+
+
+
+
+
+                            });
+                        });
+                    </script>
+
+                </div>
+
+            </div>
+
+        </div>
+  
+    
+</body>
+</html>
