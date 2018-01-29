@@ -2,6 +2,16 @@
 var app = express();
 var path = __dirname + '/views/'
 var dbhelper = require('./dbconnection.js');
+var mysql = require('mysql');
+
+var con = mysql.createConnection({
+    host: "localhost",
+    user: "root",
+    password: "root",
+    port: 8889,
+    database:"photo_management"
+});
+
 app.set('views', __dirname + '/views');
 
 //Aakanksha - Loading the pug view engine
@@ -29,5 +39,13 @@ app.listen(3000, function () {
 });
 
 app.get("/test", function (req, res) {
-    res.render("test", { title: 'Hey', message: 'Hello there!' })
+    con.connect(function(err) {
+        if (err) throw err;
+        con.query("SELECT DISTINCT * FROM image_dim", function (err, result, fields) {
+          if (err) throw err;
+          console.log(result);
+          res.render("test", { rows: result, message: 'Hello there!' });
+        });
+      });
+    
   })
