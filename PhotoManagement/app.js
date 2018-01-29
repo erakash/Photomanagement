@@ -41,7 +41,7 @@ app.listen(3000, function () {
 app.get("/test", function (req, res) {
     con.connect(function(err) {
         if (err) throw err;
-        con.query("SELECT DISTINCT * FROM image_dim", function (err, result, fields) {
+        con.query("SELECT DISTINCT * FROM image_dim LIMIT 10", function (err, result, fields) {
           if (err) throw err;
           console.log(result);
           res.render("test", { rows: result, message: 'Hello there!' });

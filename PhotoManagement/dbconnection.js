@@ -9,7 +9,7 @@ var con = mysql.createConnection({
 
 con.connect(function(err) {
     if (err) throw err;
-    con.query("SELECT DISTINCT * FROM image_dim", function (err, result, fields) {
+    con.query("SELECT DISTINCT * FROM image_dim LIMIT 10", function (err, result, fields) {
       if (err) throw err;
       console.log(result);
     });
